@@ -125,7 +125,7 @@ const Seats = () => {
             </div>
             {selectedSeats.length > 0 && <p className='text-base'>You have selected: {selectedSeats.length} seat(s)</p>}
             <Link to='/ticketpayment'>
-                <button className={`text-white px-4 py-2 rounded-lg w-full my-4 cursor-pointer ${selectedSeats.length <= 0 ? 'bg-slate-400' : 'bg-teal-700'}`}>Continue</button>
+                <button onClick={()=>setSeatModal(false)} className={`text-white px-4 py-2 rounded-lg w-full my-4 cursor-pointer ${selectedSeats.length <= 0 ? 'bg-slate-400 pointer-events-none' : 'bg-teal-700'}`}>Continue</button>
             </Link>
         </div>
     </div>

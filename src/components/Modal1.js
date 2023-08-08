@@ -124,9 +124,9 @@ const Modal1 = () => {
             </div>
             { tripType==='oneway' ?
             <div>
-                <div className='grid grid-cols-2 lg:grid-cols-3 gap-4 mb-2'>
+                <div className='grid md:grid-cols-3 gap-4 mb-2 gap-y-4'>
                     <div className='border relative px-0 '>
-                        <select className='h-full w-52 py-0 text-base font-medium border-none cursor-pointer' name="" value={selectedLocation} onInput={(e)=>setSelectedLocation(e.target.value)} id="">
+                        <select className='h-full w-full py-0 text-base font-medium border-none cursor-pointer' name="" value={selectedLocation} onInput={(e)=>setSelectedLocation(e.target.value)} id="">
                            {locations.map((location, index) =>{
                             return <option value={location.value} key={index}>{location.name}</option>
                            })}
@@ -134,18 +134,18 @@ const Modal1 = () => {
                     </div>
                     <div>
                         <div className='border relative px-0 '>
-                            <select className='h-full w-52 py-2 text-base font-medium border-none cursor-pointer'  name="" id="" value={selectedDestination} onInput={(e)=>setSelectedDestination(e.target.value)} >
+                            <select className='h-full w-full py-2 text-base font-medium border-none cursor-pointer'  name="" id="" value={selectedDestination} onInput={(e)=>setSelectedDestination(e.target.value)} >
                                 {destinationList.map((destination, index)=>{
                                     return <option value={destination.value} key={index}>{destination.name}</option>
                                 })}
                             </select>
                         </div>
                     </div>
-                    <div className='text-gray-900 border text-base font-medium py-0 px-0 rounded flex items-center col-span-2'>
+                    <div className='text-gray-900 border text-base font-medium py-0 px-0 rounded flex items-center md:col-span-2'>
                         <DatePicker className='outline-none border-none text-gray-600' value={selectedDate == null ? 'Departure Date' : selectedDate} selected={selectedDate} onChange={data=>setSelectedDate(data)} />
                     </div>
                 </div>
-                <div className='grid grid-cols-5 gap-1 text-base font-medium'>
+                <div className='grid md:grid-cols-5 gap-1 text-base font-medium'>
                     <div className='border relative px-3 col-span-2'>
                         <select className='h-full w-full outline-none border-none cursor-pointer' name="" id="" value={adult} onInput={(e)=>setAdult(e.target.value)}>
                             {adultNumber.map((num, index)=> {
@@ -164,7 +164,7 @@ const Modal1 = () => {
                 </div>
             </div> : 
             <div> 
-                <div className='flex gap-4 mb-2'>
+                <div className='grid md:grid-cols-2 gap-4 mb-2'>
                     <div className='border relative px-0 '>
                         <select className='h-full w-full py-2 outline-none text-base font-medium border-none cursor-pointer' name="" value={ticketInput.departure} onInput={(e)=>dispatch(inputs({departure:e.target.value}))} id="">
                         {locations.map((location, index) =>{
@@ -184,7 +184,7 @@ const Modal1 = () => {
             
                 </div>
 
-                <div className='flex gap-4 mb-2'>
+                <div className='grid md:grid-cols-2 gap-4 mb-2'>
                     <div className='text-gray-900 border text-base font-medium py-0 px-0 rounded flex items-center'>
                         <DatePicker className='outline-none text-gray-600 border-none cursor-pointer' value={ticketInput.departureDate == null ? 'Departure Date' : null} selected={selectedDate} onChange={date=>(setSelectedDate(date))} />
                     </div>
@@ -193,7 +193,7 @@ const Modal1 = () => {
                     </div>
                 </div>
 
-                <div className='flex gap-4 text-base font-medium'>
+                <div className='grid md:grid-cols-3 gap-4 text-base font-medium'>
                     <div className='border relative px-0 '>
                         <select className='h-full w-full outline-none border-none cursor-pointer' value={ticketInput.adult} onChange={(e)=>dispatch(inputs({adult: e.target.value}))}>
                             {adultNumber.map((num, index)=> {
@@ -232,9 +232,9 @@ const Modal1 = () => {
             
         </div>}
 
-        {checkTicket && <div className='flex gap-1 my-4'>
+        {checkTicket && <div className='grid md:grid-cols-2 gap-1 my-4'>
             <div>
-                <input className='bg-slate-100 outline-none w-72 h-12 pl-4 rounded text-base border-none cursor-pointer' type="text" placeholder='Enter your booking code' name="" />
+                <input className='bg-slate-100 outline-none w-full h-12 pl-4 rounded text-base border-none cursor-pointer' type="text" placeholder='Enter your booking code' name="" />
             </div>
             <button className='bg-teal-600 text-slate-100 px-10 py-2 rounded text-base w-48 font-medium'>Continue</button>
             
