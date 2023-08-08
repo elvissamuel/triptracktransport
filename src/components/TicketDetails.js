@@ -43,24 +43,24 @@ const TicketDetails = () => {
                         <span> {adult} Adult(s) </span>
                         <span> {children} Children(s) </span>
                     </div>
-                    <div className='lg:col-span-2 lg:text-end'><button className='border px-6 py-1 text-sm rounded shadow' onClick={()=>setDisplayModifyModal(true)}>Modify</button></div>
+                    <div className='lg:col-span-2 text-center'><button className='border px-6 py-1 text-sm rounded shadow' onClick={()=>setDisplayModifyModal(true)}>Modify</button></div>
                 </div>
             </div>
             <div className='w-full h-10 border shadow mb-6'>
             </div>
             <div className=' mx-auto max-w-5xl text-gray-900'>
                 
-                <h2>Departure Options</h2>
-                <div className='w-full grid grid-cols-12 gap-2 border py-3 px-4 text-base my-6 shadow'>
+                <h2 className='pl-4 md:pl-0 font-bold'>Departure Options</h2>
+                <div className='w-full grid lg:grid-cols-12 gap-2 border py-3 px-4 text-base my-6 shadow'>
                     <div className='col-span-3'>
                         <img src={bus2} alt="" />
-                        <p className='text-lg text-teal-700 font-bold'>Regular - 16 seaters</p>
+                        <p className='text-lg text-teal-700 font-bold'>Regular - 16-seater</p>
                     </div>
                     <div className='text-base flex gap-2 col-span-3'>
                         <p>{selectedLocation} - {selectedDestination}</p>
                         <p>{selectedDate?.toDateString()} </p>
                     </div>
-                    <div className=' col-span-2 flex gap-2 justify-center'>
+                    <div className=' col-span-2 flex gap-2 lg:justify-center'>
                         <div className='w-6 h-6'>
                             <ClockIcon />
                         </div>
@@ -72,19 +72,19 @@ const TicketDetails = () => {
                     <div className='col-span-2'>
                         <p>Adult</p>
                         <p>#13000</p>
-                        <button className='border py-1 px-4 rounded shadow text-sm my-2' onClick={()=>setSeatModal(true)}>View Seats</button>
+                        <button className='border py-1 px-4 rounded shadow text-sm my-2' onClick={()=>setSeatModal(true)}>View <span className='hidden md:inline'>Seats</span></button>
                     </div>
                 </div>
-                <div className='w-full grid grid-cols-12 gap-2 border py-3 px-4 text-base my-6 shadow'>
+                <div className='w-full grid lg:grid-cols-12 gap-2 border py-3 px-4 text-base my-6 shadow'>
                     <div className='col-span-3'>
                         <img src={bus1} alt="" />
-                        <p className='text-lg text-teal-700 font-bold'>Business Class - 10 seaters</p>
+                        <p className='text-lg text-teal-700 font-bold'>Business Class - 10-seater</p>
                     </div>
                     <div className='text-base flex gap-2 col-span-3'>
                         <p>{selectedLocation} - {selectedDestination}</p>
                         <p>{selectedDate?.toDateString()}</p>
                     </div>
-                    <div className=' col-span-2 flex gap-2 justify-center'>
+                    <div className=' col-span-2 flex gap-2 lg:justify-center'>
                         <div className='w-6 h-6'>
                             <ClockIcon />
                         </div>
@@ -96,7 +96,7 @@ const TicketDetails = () => {
                     <div className='col-span-2'>
                         <p>Adult</p>
                         <p>#17000</p>
-                        <button className='border py-1 px-4 rounded shadow text-sm my-2' onClick={()=>setSeatModal(true)}>View Seats</button>
+                        <button className='border py-1 px-4 rounded shadow text-sm my-2' onClick={()=>setSeatModal(true)}>View <span className='hidden md:inline'>Seats</span></button>
                     </div>
                 </div>
             
